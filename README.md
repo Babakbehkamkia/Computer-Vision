@@ -21,6 +21,8 @@ In the third part, I combined two images with histogram matching.
 
 In the third question of this assignment, we designed some filters in order to fix the noise of impute images.
 Then, in the next question, we must fix the noise of an image with help of the Fourier transform.
+
+
 ![Alt text](images/noised_f.png "Optional title") ![Alt text](images/denoised_f.png "Optional title") 
 
 
@@ -53,6 +55,8 @@ In the first question of this assignment, we get some images from a place and co
 
 
 In the third question, we implemented a CamScanner.
+
+
 ![Alt text](images/CamScanner.png "Optional title")
 
 ## HW8
