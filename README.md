@@ -126,6 +126,5 @@ In the next step, I created labels for my dataset in the desired format for Unet
 Then, I used the Unet, which was proposed here by ZFTurbo. In the end, I got this result.
 
 
-![Alt text](images/project/res1.png "Optional title") 
-![Alt text](images/project/res2.png "Optional title") 
+![Alt text](images/project/res.png "Optional title") 
 
