@@ -68,13 +68,6 @@ In this assignment, we read the Persian text from a given image. I use Adaptive 
 
 
 
-## HW9
-
-
-
-
-
-
 
 
 
@@ -96,4 +89,43 @@ In the next part, we used finetuned Resnet50 after resizing given images.
 
 
 
+
+## Project
+
+### Crack Detection
+
+In this course project, pictures of tiles with some cracks were given, and we must detect the location of the crack. Pictures of the patterns were also given because The pattern of the tiles was very similar to a crack.
+
+I load all images, labels, and patterns in the first step. Then, I used histogram matching to make the picture of the tile and its pattern similar in color. Then, I found the key points in each pair of a tile and a pattern to eliminate the pattern from the tile. After the similarity transform, I subtracted the two images, but there was an issue.
+
+As can be seen from the following images, the lines in the pattern are thicker. Thus, I used morphology techniques to reduce the thickness of the lines in the pattern. (left picture belongs to a pattern, and the right one is the picture of a tile)
+
+
+![Alt text](images/project/compare.png "Optional title") 
+
+
+After morphology and subtraction, I ended up with this result:
+
+![Alt text](images/project/without_model.png "Optional title") 
+
+
+However, we were able to detect only large cracks. Thus, I decided to reduce the number of iterations and size of the filter in the morphology step. Then, I resized the output to (224, 224) because the input size of the pre-trained Unet, which I used in this project, was (224, 224, 3).
+
+
+![Alt text](images/project/morph.png "Optional title") 
+
+
+
+In the next step, I created labels for my dataset in the desired format for Unet.
+
+
+![Alt text](images/project/label.png "Optional title") 
+
+
+
+Then, I used the Unet, which was proposed here by ZFTurbo. In the end, I got this result.
+
+
+![Alt text](images/project/res1.png "Optional title") 
+![Alt text](images/project/res2.png "Optional title") 
 
